@@ -36,3 +36,16 @@ class Solution(object):
             x >>= 1
             y >>= 1
         return res
+        
+M2：recursion
+C：
+class Solution(object):
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        if x == 0 and y ==0: # recursion needs a point to stop
+            return 0
+        return self.hammingDistance(x>>1,y>>1)+((x&1)^(y&1)) # plus plays higher position than bit manipulation?without parenthesis for second expression, the ans is wrong
